@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= webpackConfig.name %></title>
+    <script>
+      //动态算rem
+      void (function(doc, win) {
+        if(window.__POWERED_BY_QIANKUN__) {
+          return
+        }
+        var docEl = doc.documentElement,
+          resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+          recalc = function() {
+            // if (docEl.style.fontSize) return;
+            // clientWidth = docEl.clientWidth;
+            var docClientWidth = docEl.clientWidth;
+            if (docClientWidth <= 1280) {
+              clientWidth = 1280;
+            } else if (docClientWidth >= 1920) {
+              clientWidth = 1920;
+            } else {
+              clientWidth = docClientWidth
+            }
+            // clientWidth = docEl.clientWidth > 1920 ? 1920 : docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = (clientWidth / 128) + 'px';
+            if (document.body) {
+              document.body.style.fontSize = docEl.style.fontSize;
+            }
+          };
+        recalc();
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+      </script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= webpackConfig.name %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

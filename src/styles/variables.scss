@@ -1,0 +1,56 @@
+// sidebar
+$menuText:#333333;
+$menuActiveText:#409EFF;
+$subMenuActiveText:#333333; //https://github.com/ElemeFE/element/issues/12951
+
+$menuBg:#ffffff;
+$menuHover:#ecf5ff;
+
+$subMenuBg:#ffffff;
+$subMenuHover:#ecf5ff;
+
+$sideBarWidth: 210px;
+
+
+//$tableBorder:1px solid #dfe6ec;  默认
+$tableBorder:1px solid #D9D9D9;
+$tableTextColor: #595959;
+
+/* smp common
+------------------------------ */
+$smp--color-warn-lv-1: #fb7c26;
+$smp--color-warn-lv-2: #ffbf11;
+$smp--color-warn-lv-3: #11bbec;
+$smp--color-warn-lv-4: #1882f8;
+$smp--color-blue: #1280f1;
+$smp--color-blue-white: #e2f0fd;
+$smp--color-blue-white-2: #f1f8ff;
+$smp--color-red: #f95757;
+$smp--color-white: #ffffff;
+$smp--color-gray_f5: #f5f5f5;
+$smp--color-gray_ef: #efefef;
+$smp--color-gray_e7: #e7e7e7;
+$smp--color-gray_dd: #dddddd;
+$smp--color-font-color-6: #666;
+$smp--color-font-color-3: #333;
+$smp--box-shadow: 0 0 5px rgba(0,0,0,0.3);
+$smp--box-shadow-1: 0 0 5px rgba(0,0,0,0.1);
+
+
+
+// the :export directive is the magic sauce for webpack
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+:export {
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+  subMenuActiveText: $subMenuActiveText;
+  menuBg: $menuBg;
+  menuHover: $menuHover;
+  subMenuBg: $subMenuBg;
+  subMenuHover: $subMenuHover;
+  sideBarWidth: $sideBarWidth;
+  // COMMON
+  smpColorBlue: $smp--color-blue;
+  smpColorBlueWhite: $smp--color-blue-white;
+  smpColorBlueWhite2: $smp--color-blue-white-2;
+}

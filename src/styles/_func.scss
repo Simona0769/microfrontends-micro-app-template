@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+$base-font-size: 15; //design 1920px / 128 = 75px;
+
+@function px2rem($px) {
+	@return $px / $base-font-size * 1rem;
+}
+
+@function pxToVw($px, $px2: 1920) {
+
+	@return $px / $px2 * 100vw;
+}
+@function pxToVh($px, $px2: 1080) {
+    @return $px / $px2 * 100vh;
+}
+@function percentWidth($px, $px2: 1920) {
+	@return $px / $px2 * 100%;
+}
+@function percentHeight($px, $px2: 1080) {
+	@return $px / $px2 * 100%;
+}
+
+@function black($opacity){
+	@return rgba(0,0,0,$opacity);
+}
+@function white($opacity){
+	@return rgba(255,255,255,$opacity);
+}
+@mixin border($pos, $color) {
+    content: "";
+    position: absolute;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    @if $pos=='top'{
+        #{$pos}: 0;
+        left: 0;
+        right: 0;
+        border-#{$pos}: 1px solid $color;
+        transform: scaleY(.5);
+        -webkit-transform: scaleY(.5);
+    } @else if $pos=='bottom' {
+    	 #{$pos}: 0;
+        left: 0;
+        right: 0;
+        border-#{$pos}: 1px solid $color;
+        transform: scaleY(.5);
+        -webkit-transform: scaleY(.5);
+    } @else {
+    	top: 0;
+        bottom: 0;
+        #{$pos}: 0;
+        border-#{$pos}: 1px solid $color;
+        transform: scaleX(.5);
+        -webkit-transform: scaleX(.5);
+    }
+}
+
+
+
+
+
+
+
+
